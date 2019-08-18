@@ -1,7 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 使用react开发的简易记账项目
+学完react基础后，在网上找了这个项目直接开练
+课程地址：https://coding.imooc.com/class/302.html
 
+
+如果你没用过github ，可以看这边文章 差不多10分钟就可以简单上手  学会将自己的代码上传到github中去
+https://www.jianshu.com/p/7edb6b838a2e
+
+
+####关于文件结构
+- components文件夹存放所有的展示型组件
+- containers文件夹存放所有的容器型组件
+- 这两个文件夹下面的__test__文件夹存放所有的组件测试文件
+- 文件使用 Pascal Case命名法 首字母大写，而后的每个单词首字母大写
 ## Available Scripts
 
 In the project directory, you can run:
