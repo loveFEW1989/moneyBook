@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import PriceList from './components/PriceList'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ViewTab from './components/ViewTab'
+import TotalPrice from './components/TotalPrice'
+import {LIST_VIEW, CHART_VIEW} from './utils'
 
 // function App() {
 //   return (
@@ -18,7 +21,8 @@ const list = [
     "category": {
       "id":"1",
       "name": "旅游",
-      "type": "outcome"
+      "type": "outcome",
+      "iconName": "ios-plane"
     }
   },
   {
@@ -29,7 +33,8 @@ const list = [
     "category": {
       "id":"1",
       "name": "旅游",
-      "type": "income"
+      "type": "income",
+      "iconName": "ios-plane"
     }
   }
 ]
@@ -41,6 +46,10 @@ class App extends Component {
  render() {
    return (
      <div>
+     <TotalPrice income={20} outcome={100}/>
+     <ViewTab activeTab={LIST_VIEW}
+     onTabChange= {(view) => {console.log(view)}}
+     />
      <PriceList  items={list} 
      onModifyItem={(item)=> {alert(item.id)}}
      onDeleteItem={(item)=> {alert(item.id)}}
