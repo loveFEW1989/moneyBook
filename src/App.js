@@ -3,6 +3,9 @@ import PriceList from './components/PriceList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ViewTab from './components/ViewTab'
 import TotalPrice from './components/TotalPrice'
+import MonthPicker from './components/MonthPicker'
+import {padLeft} from './utils'
+
 import {LIST_VIEW, CHART_VIEW} from './utils'
 
 // function App() {
@@ -55,6 +58,7 @@ class App extends Component {
      onDeleteItem={(item)=> {alert(item.id)}}
      
      />
+     <MonthPicker  year={2019} month = {padLeft(8)} />
      </div>
    )
  }
