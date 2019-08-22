@@ -1,60 +1,12 @@
-
-
-/* PriceList */
-
-.list-item{
-  display: flex;
-  justify-content: space-around;
-  
+.APP{ 
+  background-color: #EFEFEF
 }
-.list-item span {
-  text-align: center;
-}
-
-/* header */
-.headerContainer{
-  
-  background:blue;
-  padding: 20px 10px;
-}
-.headerTitle{
-  text-align: center;
-
-}
-.items{
-  display: flex;
-  margin-top:10px;
-
-}
-.select{
-  width:100px;
-}
-.price{
-  flex:1;
-}
-
-.tabs{
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  margin-top:20px;
-  margin-bottom:10px;
-}
-.btn{
-  line-height:20px;
- color:blueviolet;
-  border-radius: 5px;
-  width:48%;
-  border: 1px solid #999;
-}
-.active{
-  background-color: blueviolet;
-  color: #fff;
-}
-.createBtn{
-  width: 100%;
-  border-radius:5px;
-  background-color: blueviolet;
-  padding:5px 0;
+.App-header {
+  background-color : #222;
+  padding: 20px;
   color: #fff
+}
+
+.content-area{
+  text-align: center
 }

@@ -1,45 +1,97 @@
-import React, { Component } from 'react';
-import PriceList from '../components/PriceList'
+import React, {Component} from 'react';
 import '../App.css'
-import Header from '../components/Header'
+import PriceList from '../components/PriceList'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import ViewTab from '../components/ViewTab'
+import TotalPrice from '../components/TotalPrice'
+import MonthPicker from '../components/MonthPicker'
 import CreateBtn from '../components/CreateBtn'
-class Home extends Component {
-  constructor(props) {
-    super(props)
-   this.state = {
-     lists: [
-       {name:'吃饭',price: 200,time:'2019-08-17'},
-       {name:'买手机',price: 1200,time:'2019-08-17'},
-       {name:'逛街',price: 300,time:'2019-08-19'}
-     ]
-   }
-   this.delete = this.delete.bind(this)
-  }
-  delete(index) {
-    let listss = this.state.lists
-    listss.splice(index,1)
-    this.setState({
-      lists:listss
-    })
-  }
-  render() { 
-    return ( 
-      <div>
-      <Header/>
-      <ViewTab /> 
-      <CreateBtn/>
-      {
-        this.state.lists.map((item,index) => {
-       return    <PriceList key={index} name={item.name} delete={this.delete} price={item.price} time={item.time}/>
-        })
-      }
-     
+import Ionicon from 'react-ionicons'
 
+
+
+import {LIST_VIEW, CHART_VIEW, TYPE_INCOME, TYPE_OUTCOME  } from '../utils'
+
+const list = [
+  {
+    "id":1,
+    "title": "去云南旅游",
+    "price": 200,
+    "date": "2019-8-10",
+    "category": {
+      "id":"1",
+      "name": "旅游",
+      "type": "outcome",
+      "iconName": "ios-plane"
+    }
+  },
+  {
+    "id":2,
+    "title": "去贵州旅游",
+    "price": 400,
+    "date": "2019-8-18",
+    "category": {
+      "id":"1",
+      "name": "旅游",
+      "type": "income",
+      "iconName": "ios-plane"
+    }
+  }
+]
+
+class Home extends Component {
+  render() {
+    let totalIncom = 0, totalOutcom = 0
+    list.forEach((item)=> {
+      if(item.category.type === totalIncom) {
+        totalIncom+=item.price
+      } else {
+        totalOutcom+=item.price
+      }
+    })
+    return (
+     <React.Fragment>
+     <header className="App-header">
+     <div className="row">
+     <div className="col">
+     <MonthPicker
+     year={2019}
+     month={8}
+     onClick={()=> {}}
+     />
+     </div>
+     <div className="col">
+     <TotalPrice
+     income={totalIncom}
+     outcome={totalOutcom}
+     />
+     </div>
      
-      </div>
-     );
+     </div>
+       
+     </header>
+
+     <div className="content-area py=3 px=3">
+     <ViewTab  activeTab={LIST_VIEW} onTabChange={()=>{}}  />
+     <CreateBtn  onCLick={()=> {}} />
+     <PriceList 
+     items={list}
+     onModifyItem={()=> {}}
+     onDeleteItem={() => {}}
+     
+     />
+     
+     </div>
+     
+     
+     
+     </React.Fragment>
+
+
+
+
+    )
   }
 }
- 
-export default Home;
+
+export default Home
