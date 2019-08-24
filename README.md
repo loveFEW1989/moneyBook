@@ -9,11 +9,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://www.jianshu.com/p/7edb6b838a2e
 
 
-####关于文件结构
+##关于文件结构
 - components文件夹存放所有的展示型组件
 - containers文件夹存放所有的容器型组件
 - 这两个文件夹下面的__test__文件夹存放所有的组件测试文件
 - 文件使用 Pascal Case命名法 首字母大写，而后的每个单词首字母大写
+
+- 首先单独开发各个组件
+ - Home页面由 MonthPicker(年月选择), TotalPrice(总支出，收入), ViewTab(列表模式，图标模式切换),CreateBtn(新建收入/支出button), PriceList(收入支出列表)组成 
+
+##  state设计原则
+
+- 最小化state
+- 不要重复数据
+- 可以推算出来的值 就不要写在state中
+
+## 数组方法
+```
+reduce()
+filter()
+includes()
+map()
+
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

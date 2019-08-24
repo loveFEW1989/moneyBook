@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import Ionicon from 'react-ionicons'
 
 
-const CreateBtn = ({onClick}) => (
+const CreateBtn = ({onCreateCLick}) => (
   <button
   className="btn btn-primary btn-lg btn-block"
-  onClick ={(e) => {onClick()}}
+  onClick={(e) => {onCreateCLick()}}
   style={{textAlign:'center'}}
   >
   <Ionicon
